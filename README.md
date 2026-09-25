@@ -1,4 +1,4 @@
-## 📱 Plataformas Software Móviles (PSM) 2024/2025
+## 📱 Plataformas Software Móviles (PSM) 2026/2027
 
 Estas guías de laboratorio han sido elaboradas por:
 
@@ -6,7 +6,7 @@ Estas guías de laboratorio han sido elaboradas por:
  
  Para la asignatura **Plataformas Software Móviles (PSM)** 
  
- En el curso académico 2024/2025. 🎓
+ En el curso académico 2026/2027. 🎓
 
 ---
 
@@ -19,7 +19,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 
 | Laboratorio | Nombre | Evaluable |
 |-------------|-----------| -----------|
-| Lab 00 | [Manual Rápido de **Kotlin**](/labo00/README.md) | ✅ |
+| Lab 00 | [Manual Rápido de **Kotlin**](/labo00/README.md) |  |
 | Lab 01 | [Primeros pasos en **Android Studio**](/labo01/README.md) |  |
 | Lab 02a | [Piedra, papel y tijeras 🚽✂️📄](/labo02/README.md) |  |
 | Lab 02b | [Reto](/labo02/retoLabo02.md) | ✅ |
