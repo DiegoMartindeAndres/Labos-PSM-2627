@@ -23,7 +23,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 | Lab 01 | [Primeros pasos en **Android Studio**](/labo01/README.md) |  |
 | Lab 02a | [Piedra, papel y tijeras 🚽✂️📄](/labo02a/README.md) |  |
 | Lab 02b | [Reto](/labo02b/README.md) | ✅ |
-| Lab 03a | Funciones [**Próximamente**]  |  |
+| Lab 03a | [Funciones](/labo03a/README.md) |  |
 | Lab 03b | Reto Funciones [**Próximamente**]  | ✅ |
 | Lab 03c | Colecciones [**Próximamente**]  |  |
 | Lab 03d | Reto Bancario [**Próximamente**]  | ✅ |
