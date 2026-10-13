@@ -25,8 +25,8 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 | Lab 02b | [Reto](/labo02b/README.md) | ✅ |
 | Lab 03a | [Funciones](/labo03a/README.md) |  |
 | Lab 03b | [Reto Funciones](/labo03b/README.md) | ✅ |
-| Lab 03c | Colecciones [**Próximamente**]  |  |
-| Lab 03d | Reto Bancario [**Próximamente**]  | ✅ |
+| Lab 03c | [Colecciones](/labo03c/README.md) |  |
+| Lab 03d | [Reto Bancario](/labo03d/README.md) | ✅ |
 | Lab 04a | Funciones Lambda [**Próximamente**]  |  |
 | Lab 04b | Manual de Jetpack Compose: Construyendo tu primera interfaz gráfica [**Próximamente**]  |  |
 | Lab 05a | Gestión de estados [**Próximamente**]  |  |
