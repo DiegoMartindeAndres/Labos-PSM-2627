@@ -684,5 +684,282 @@ Ahora que entiendes cómo funcionan las funciones y lambdas en Kotlin, estás pr
 ¡Excelente trabajo! 👏
 
 
+---
+
+# 🏆 4. Retos: ¡Pon a prueba tus conocimientos!
+
+Ahora que conoces las funciones lambda en Kotlin, es el momento de poner en práctica lo aprendido.
+
+Los siguientes retos tienen una dificultad progresiva. Intenta resolverlos por tu cuenta antes de consultar la solución.
+
+---
+
+## 🟢 Reto 1. Una calculadora con lambdas 🧮
+
+**Objetivo:** Practicar la declaración de lambdas, los tipos de función y los parámetros.
+
+Crea una calculadora sencilla utilizando **funciones lambda** en lugar de funciones tradicionales.
+
+### 📋 Requisitos
+
+1. Declara una lambda llamada `sumar` que reciba dos números enteros y devuelva su suma.
+2. Declara otra lambda llamada `multiplicar` que reciba dos números enteros y devuelva su producto.
+3. Ambas deben tener explícitamente el tipo `(Int, Int) -> Int`.
+4. Desde `main()`, ejecuta ambas lambdas con los valores 5 y 3 y muestra los resultados.
+
+### 🖥️ Salida esperada
+
+```text
+5 + 3 = 8
+5 * 3 = 15
+```
+
+**💡 Pista:** Recuerda que una lambda devuelve automáticamente el valor de su última expresión.
+
+<details>
+  <summary>Pulsa aquí para ver la solución</summary>
+
+```kotlin
+fun main() {
+    val sumar: (Int, Int) -> Int = { a, b ->
+        a + b
+    }
+
+    val multiplicar: (Int, Int) -> Int = { a, b ->
+        a * b
+    }
+
+    println("5 + 3 = ${sumar(5, 3)}")
+    println("5 * 3 = ${multiplicar(5, 3)}")
+}
+```
+
+</details>
+<br>
+
+---
+
+## 🟡 Reto 2. Personalizando mensajes 📢
+
+**Objetivo:** Practicar las funciones de orden superior, el uso de `it` y la sintaxis *trailing lambda*.
+
+Queremos crear una función que permita mostrar mensajes personalizados en la consola.
+
+### 📋 Requisitos
+
+1. Crea una función llamada `mostrarMensaje` que reciba:
+   - Un parámetro `nombre` de tipo `String`.
+   - Un parámetro `formato` de tipo `(String) -> String`.
+2. La función debe ejecutar la lambda recibida y mostrar el resultado en pantalla.
+3. Desde `main()`, llama tres veces a `mostrarMensaje`:
+   - La primera debe mostrar un saludo.
+   - La segunda debe mostrar el nombre en mayúsculas.
+   - La tercera debe mostrar un mensaje de despedida.
+4. Utiliza `it` y la sintaxis *trailing lambda* en las llamadas.
+
+### 🖥️ Salida esperada
+
+```text
+Hola, Ana!
+ANA
+Adiós, Ana. Hasta pronto!
+```
+
+**💡 Pista:** Puedes utilizar `it.uppercase()` para convertir un texto a mayúsculas.
+
+<details>
+  <summary>Pulsa aquí para ver la solución</summary>
+
+```kotlin
+fun mostrarMensaje(
+    nombre: String,
+    formato: (String) -> String
+) {
+    println(formato(nombre))
+}
+
+fun main() {
+    mostrarMensaje("Ana") {
+        "Hola, $it!"
+    }
+
+    mostrarMensaje("Ana") {
+        it.uppercase()
+    }
+
+    mostrarMensaje("Ana") {
+        "Adiós, $it. Hasta pronto!"
+    }
+}
+```
+
+</details>
+<br>
+
+---
+
+## 🟠 Reto 3. Una fábrica de descuentos 🛒
+
+**Objetivo:** Practicar las funciones de orden superior que devuelven otras funciones.
+
+Una tienda quiere aplicar diferentes descuentos a sus productos. En lugar de crear una función para cada descuento, vamos a crear una función que **genere otras funciones**.
+
+### 📋 Requisitos
+
+1. Crea una función llamada `crearDescuento` que reciba un porcentaje de descuento de tipo `Int`.
+2. Esta función debe devolver una lambda de tipo `(Double) -> Double`.
+3. La lambda devuelta debe recibir el precio original de un producto y calcular su precio después de aplicar el descuento.
+4. Desde `main()`, crea dos funciones de descuento:
+   - Una que aplique un 10%.
+   - Otra que aplique un 25%.
+5. Aplica ambos descuentos a un producto de 100 €.
+
+### 🖥️ Salida esperada
+
+```text
+Precio original: 100.0 €
+Con descuento del 10%: 90.0 €
+Con descuento del 25%: 75.0 €
+```
+
+**💡 Pista:** La función `crearDescuento()` no debe devolver directamente un precio, sino una función que pueda calcularlo posteriormente.
+
+<details>
+  <summary>Pulsa aquí para ver la solución</summary>
+
+```kotlin
+fun crearDescuento(porcentaje: Int): (Double) -> Double {
+    return { precio ->
+        precio - precio * porcentaje / 100.0
+    }
+}
+
+fun main() {
+    val descuento10 = crearDescuento(10)
+    val descuento25 = crearDescuento(25)
+
+    val precio = 100.0
+
+    println("Precio original: $precio €")
+    println("Con descuento del 10%: ${descuento10(precio)} €")
+    println("Con descuento del 25%: ${descuento25(precio)} €")
+}
+```
+
+**🧠 Reflexiona:** ¿Por qué podemos seguir utilizando el valor de `porcentaje` dentro de la lambda después de que `crearDescuento()` haya terminado?
+
+La lambda conserva el acceso al valor de `porcentaje` con el que fue creada. Este comportamiento se conoce como **captura de variables** (*closure*).
+
+</details>
+<br>
+
+---
+
+## 🔴 Reto 4. Un sistema de notificaciones 🔔
+
+**Objetivo:** Combinar funciones de orden superior, lambdas opcionales, tipos anulables, `repeat()` y sintaxis *trailing lambda*.
+
+Vamos a desarrollar un pequeño sistema que permita enviar notificaciones personalizadas a un usuario.
+
+### 📋 Requisitos
+
+Crea una función llamada `enviarNotificaciones` que reciba los siguientes parámetros:
+
+1. `veces: Int`: número de veces que se enviará la notificación.
+2. `mensaje: String`: texto de la notificación.
+3. `prefijo: ((String) -> String)? = null`: lambda opcional que permita modificar el mensaje antes de mostrarlo.
+4. `accion: (String) -> Unit`: lambda que indique qué hacer con el mensaje.
+
+La función debe cumplir las siguientes condiciones:
+
+- Utilizar `repeat()` para ejecutar la acción tantas veces como indique `veces`.
+- Si se proporciona la lambda `prefijo`, debe utilizarse para modificar el mensaje.
+- Si `prefijo` es `null`, debe utilizarse el mensaje original.
+- La lambda `accion` debe recibir el mensaje final.
+- La lambda `accion` debe ser el último parámetro para poder utilizar la sintaxis *trailing lambda*.
+
+### 🧪 Prueba tu función
+
+Desde `main()`, realiza dos llamadas:
+
+**Primera llamada:** Envía tres veces el mensaje `"Tienes un mensaje nuevo"`, sin utilizar ningún prefijo.
+
+**Segunda llamada:** Envía dos veces el mensaje `"Batería baja"`, utilizando una lambda que añada el prefijo `"URGENTE: "`.
+
+### 🖥️ Salida esperada
+
+```text
+Tienes un mensaje nuevo
+Tienes un mensaje nuevo
+Tienes un mensaje nuevo
+URGENTE: Batería baja
+URGENTE: Batería baja
+```
+
+**💡 Pista:** Comprueba si `prefijo` es distinto de `null` antes de ejecutarlo. Recuerda que `repeat()` también recibe una lambda.
+
+<details>
+  <summary>Pulsa aquí para ver la solución</summary>
+
+```kotlin
+fun enviarNotificaciones(
+    veces: Int,
+    mensaje: String,
+    prefijo: ((String) -> String)? = null,
+    accion: (String) -> Unit
+) {
+    repeat(veces) {
+        val mensajeFinal = if (prefijo != null) {
+            prefijo(mensaje)
+        } else {
+            mensaje
+        }
+
+        accion(mensajeFinal)
+    }
+}
+
+fun main() {
+    // Notificación sin prefijo
+    enviarNotificaciones(3, "Tienes un mensaje nuevo") {
+        println(it)
+    }
+
+    // Notificación con prefijo personalizado
+    enviarNotificaciones(
+        2,
+        "Batería baja",
+        { "URGENTE: $it" }
+    ) {
+        println(it)
+    }
+}
+```
+
+### 🧠 Preguntas para reflexionar
+
+1. ¿Por qué `prefijo` tiene un signo de interrogación `?` en su tipo?
+2. ¿Por qué `accion` devuelve `Unit`?
+3. ¿Qué ocurriría si llamamos a `enviarNotificaciones` con `veces = 0`?
+4. ¿Por qué podemos escribir la lambda `accion` fuera de los paréntesis?
+
+</details>
+<br>
+
+---
+
+## 🎉 ¡Retos completados!
+
+Si has conseguido resolver los cuatro retos, ya sabes:
+
+- Definir y ejecutar expresiones lambda con distintos tipos de parámetros y valores de retorno.
+- Utilizar `it` para simplificar lambdas con un único parámetro.
+- Pasar lambdas como argumentos a funciones de orden superior.
+- Crear funciones que devuelven otras funciones.
+- Utilizar parámetros funcionales opcionales y anulables.
+- Aplicar la sintaxis *trailing lambda*.
+- Repetir acciones mediante `repeat()`.
+
+**🚀 ¡Ya estás preparado para utilizar funciones lambda en aplicaciones Kotlin más complejas!**
 
 
