@@ -29,7 +29,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 | Lab 03d | [Reto Bancario](/labo03d/README.md) | ✅ |
 | Lab 04a | [Funciones Lambda](/labo04a/README.md) |  |
 | Lab 04b | [Manual de Jetpack Compose: Construyendo tu primera interfaz gráfica](/labo04b/README.md) |  |
-| Lab 05a | Gestion de estados [**Próximamente**]  |  |
+| Lab 05a | Gestión de estados [**Próximamente**]  |  |
 | Lab 05b | App conversión de Unidades [**Próximamente**]  | ✅ |
 | Lab 06 | 🚽✂️📄 Piedra, Papel o Tijera con GUI [**Próximamente**]  | ✅ |
 | Lab 07a | Programación funcional (Map, Copy, Let) [**Próximamente**]  |  |
