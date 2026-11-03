@@ -374,9 +374,6 @@ Para ello recomiendo seguir la documentación oficial de Android Studio para [ej
 ## ¿Necesitas ayuda? 🆘
 
 Aquí os dejaré la solución completa del laboratorio cuando todo el mundo haya entregado su laboratorio.
- 
-[Aquí te dejo el código de la aplicación completa. Esto es por si te atascas.](sol.md).
-
 
 > [!WARNING]
 > Recuerda: **Nadie ganó un Roland Garros viendo jugar a Rafa Nadal por la TV.**
