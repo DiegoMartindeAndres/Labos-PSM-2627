@@ -33,7 +33,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 | Lab 05b | [App conversión de Unidades](/labo05b/README.md) | ✅ |
 | Lab 06 | [🚽✂️📄 Piedra, Papel o Tijera con GUI](/labo06/README.md) | ✅ |
 | Lab 07a | [Programación funcional (Map, Copy, Let)](/labo07a/README.md) |  |
-| Lab 07b | 📱 App Lista de la compra [**Próximamente**]  | ✅ |
+| Lab 07b | [📱 App Lista de la compra](/labo07b/README.md) | ✅ |
 | Lab 08 | 📱 App Lista de la compra usando MVVM [**Próximamente**]  | ✅ |
 | Lab 09 | 🌐 Aplicación de recetas de comida [**Próximamente**]  | ✅ |
 | Lab 10a | 🚀 Implementación básica de Navegación en Jetpack Compose [**Próximamente**]  | ✅ |
